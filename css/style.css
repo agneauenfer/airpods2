@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e1e1e1;
+    font-family: 'Inter', sant-serif;
+}
+
+.header {}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 15px;
+    
+}
+
+.logo {}
+
+.nav {}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+
+}
+
+.nav-item {}
+
+.nav-link {
+    text-decoration: none;
+    color: #6b6b6b;
+    font-style: 23px;
+}
+
+.intro {}
+
+.fixed-img {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+}
+
+.intro-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.intro-left {
+    flex-shrink: 0;
+}
+
+.intro-left::before {
+    content: 'Air \A Pods \A Max';
+    white-space: pre;
+    position: absolute;
+    color: #393939;
+    font-size: 250px;
+    font-weight: 900;
+    line-height: 200px;
+    z-index: -1;
+    left: 0;
+    background: linear-gradient(0deg, #6B6B6B0a, #6B6B6B33, #6B6B6B32, #6B6B6B10);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.intro-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: start;
+}
+
+.intro-heading {
+    font-size: 90px;
+    font-weight: 900;
+    color: #393939;
+    line-height: 90px;
+}
+
+.intro-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #6b6b6b;
+}
+
+.intro-btn {
+    text-decoration: none;
+    font-size: 24px;
+    color: #393939;
+    background: #d9d9d9;
+    padding: 25px 60px;
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: inset 0 4px 4px #00000067, 0 4px 4px #00000067;
+
+}
+
+.burger {
+    width: 40px;
+    height: 30px;
+    background: none;
+    border: none;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 800;
+
+}
+
+.burger span {
+    height: 4px;
+    width: 100%;
+    background: #393939;
+    border-radius: 15px;
+
+}
+
+@media (max-width: 768px) {
+    .fixed-img {
+        display: none;
+    }
+
+    .intro-container {
+        flex-direction: column;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100%;
+        background: #D9D9D9;
+        z-index: 10;
+        padding: 150px 15px;
+        transform: translateX(-100%);
+        transition: all 0.3s ease 0s;
+
+    }
+    .nav.clicked{
+        transform: translateX(0);
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .intro-left::before {
+        display: none;
+    }
+
+    .burger{
+        display: flex;
+    }
+
+}
